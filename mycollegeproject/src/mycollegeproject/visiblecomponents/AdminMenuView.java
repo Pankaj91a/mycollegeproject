@@ -1,6 +1,5 @@
 package mycollegeproject.visiblecomponents;
 
-import mycollegeproject.businesscomponents.AdminPojo;
 import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -10,7 +9,6 @@ import javax.swing.JLabel;
 
 public class AdminMenuView extends JFrame implements ActionListener {
 
-    AdminPojo admin;
     Container container = getContentPane();
 
     JLabel pageTitleLabel = new JLabel("Super Admin Home page");
@@ -22,8 +20,7 @@ public class AdminMenuView extends JFrame implements ActionListener {
     JButton networkManagementButton = new JButton("Network Management");
     JButton feesManagementButton = new JButton("Fees Management");
 
-    AdminMenuView(AdminPojo admin) {
-        this.admin = admin;
+    AdminMenuView() {
         container.setLayout(null);
         this.setBounds(10, 10, 810, 510);
         pageTitleLabel.setBounds(20, 10, 500, 50);

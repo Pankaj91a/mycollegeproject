@@ -1,6 +1,5 @@
 package mycollegeproject.visiblecomponents;
 
-import mycollegeproject.businesscomponents.StudentPojo;
 import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -10,7 +9,6 @@ import javax.swing.JLabel;
 
 public class StudentMenuView extends JFrame implements ActionListener {
 
-    StudentPojo student;
     Container container = getContentPane();
 
     JLabel pageTitleLabel = new JLabel("Faculty Home page");
@@ -18,8 +16,7 @@ public class StudentMenuView extends JFrame implements ActionListener {
     JButton branchesViewButton = new JButton("Show Available Branches");
     JButton examsViewButton = new JButton("Show all Exams Details");
 
-    StudentMenuView(StudentPojo student) {
-        this.student = student;
+    StudentMenuView() {
         container.setLayout(null);
         this.setBounds(10, 10, 810, 510);
         pageTitleLabel.setBounds(20, 10, 500, 50);

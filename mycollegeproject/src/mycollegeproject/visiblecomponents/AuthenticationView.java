@@ -1,8 +1,5 @@
 package mycollegeproject.visiblecomponents;
 
-import mycollegeproject.businesscomponents.FacultyPojo;
-import mycollegeproject.businesscomponents.StudentPojo;
-import mycollegeproject.businesscomponents.AdminPojo;
 import mycollegeproject.businesscomponents.UserPojo;
 import javax.swing.*;
 import java.awt.*;
@@ -63,17 +60,17 @@ class LoginFrame extends JFrame implements ActionListener {
             } else {
                 if (user.isSuperAdmin()) {
                     System.out.println("Logged in as super admin.");
-                    AdminMenuView adminPage = new AdminMenuView((AdminPojo) user);
+                    AdminMenuView adminPage = new AdminMenuView();
                     adminPage.setVisible(true);
                     this.setVisible(false);
                 } else if (user.isFaculty()) {
                     System.out.println("Logged in as faculty.");
-                    FacultyMenuView facultyPage = new FacultyMenuView((FacultyPojo) user);
+                    FacultyMenuView facultyPage = new FacultyMenuView();
                     facultyPage.setVisible(true);
                     this.setVisible(false);
                 } else if (user.isStudent()) {
                     System.out.println("Logged in as student.");
-                    StudentMenuView studentPage = new StudentMenuView((StudentPojo) user);
+                    StudentMenuView studentPage = new StudentMenuView();
                     studentPage.setVisible(true);
                     this.setVisible(false);
                 }
