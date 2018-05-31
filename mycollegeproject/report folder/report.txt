@@ -1,3 +1,5 @@
+ProjectStartView.java is the main class to start the execution.
+
 I have created 2 packges.
 1. business components
 2. visible components
