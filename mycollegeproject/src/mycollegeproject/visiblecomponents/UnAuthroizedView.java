@@ -1,11 +1,8 @@
 package mycollegeproject.visiblecomponents;
 
 import java.awt.Container;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
+import java.awt.event.*;
+import javax.swing.*;
 
 class UnAuthroizedView extends JFrame implements ActionListener {
     

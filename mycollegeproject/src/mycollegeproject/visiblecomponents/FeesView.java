@@ -1,13 +1,9 @@
 package mycollegeproject.visiblecomponents;
 
 import java.awt.Container;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
-import mycollegeproject.businesscomponents.Manager;
+import java.awt.event.*;
+import javax.swing.*;
+import mycollegeproject.businesscomponents.Implementor;
 
 public class FeesView extends JFrame implements ActionListener {
 
@@ -28,7 +24,7 @@ public class FeesView extends JFrame implements ActionListener {
 
     JButton updateResultButton = new JButton("Update Fees");
 
-    Manager manager = new Manager();
+    Implementor manager = new Implementor();
 
     FeesView(String title) {
         this.setBounds(10, 10, 810, 510);

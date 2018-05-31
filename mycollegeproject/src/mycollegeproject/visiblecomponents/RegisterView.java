@@ -1,18 +1,13 @@
 package mycollegeproject.visiblecomponents;
 
 import java.awt.Container;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPasswordField;
-import javax.swing.JTextField;
-import mycollegeproject.businesscomponents.Manager;
+import java.awt.event.*;
+import javax.swing.*;
+import mycollegeproject.businesscomponents.Implementor;
 
 class RegisterView extends JFrame implements ActionListener {
 
-    Manager m = new Manager();
+    Implementor m = new Implementor();
     Container container = getContentPane();
     JLabel pageTitleLabel = null;
     JLabel firstNameLabel = new JLabel("First Name : ");

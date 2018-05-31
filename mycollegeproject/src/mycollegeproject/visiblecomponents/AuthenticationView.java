@@ -1,29 +1,28 @@
 package mycollegeproject.visiblecomponents;
 
 import mycollegeproject.businesscomponents.UserPojo;
-import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import mycollegeproject.businesscomponents.Manager;
+import java.awt.event.*;
+import javax.swing.*;
+import mycollegeproject.businesscomponents.Implementor;
 
-class LoginFrame extends JFrame implements ActionListener {
+public class AuthenticationView extends JFrame implements ActionListener {
 
     Container container = getContentPane();
-    JLabel pageTitle = new JLabel("Login page");
+    JLabel pageTitle = new JLabel("AuthenticationView");
     JLabel userLabel = new JLabel("USERNAME");
     JLabel passwordLabel = new JLabel("PASSWORD");
     JTextField userTextField = new JTextField();
     JPasswordField passwordField = new JPasswordField();
     JButton loginButton = new JButton("LOGIN");
     JButton registerButton = new JButton("New Student ? Register now !");
-    Manager manager = new Manager();
+    Implementor manager = new Implementor();
 
-    LoginFrame() {
+    AuthenticationView() {
         loginButton.addActionListener(this);
         registerButton.addActionListener(this);
         container.setLayout(null);
-        pageTitle.setBounds(75, 50, 150, 50);
+        pageTitle.setBounds(20, 10, 150, 50);
 
         userLabel.setBounds(50, 150, 100, 30);
         userTextField.setBounds(150, 150, 150, 30);

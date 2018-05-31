@@ -4,13 +4,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
-public class Manager {
+public class Implementor {
 
-    public Manager() {
-    }    
+    public Implementor() {
+    }
 
     public List<BranchPojo> getAllBranches() {
         List<BranchPojo> list = new ArrayList<BranchPojo>();
@@ -22,7 +20,7 @@ public class Manager {
                 list.add(branch);
             }
         } catch (SQLException ex) {
-            Logger.getLogger(Manager.class.getName()).log(Level.SEVERE, null, ex);
+            ex.printStackTrace();
         }
         return list;
     }
@@ -37,7 +35,7 @@ public class Manager {
                 list.add(course);
             }
         } catch (SQLException ex) {
-            Logger.getLogger(Manager.class.getName()).log(Level.SEVERE, null, ex);
+            ex.printStackTrace();
         }
         return list;
     }
@@ -52,7 +50,7 @@ public class Manager {
                 list.add(test);
             }
         } catch (SQLException ex) {
-            Logger.getLogger(Manager.class.getName()).log(Level.SEVERE, null, ex);
+            ex.printStackTrace();
         }
         return list;
     }
@@ -91,39 +89,39 @@ public class Manager {
             try {
                 while (rs.next()) {
                     try {
-                        return new AdminPojo(rs.getInt("id"), rs.getString("firstname"), rs.getString("lastname"));
+                        return new UserPojo(rs.getInt("id"), rs.getString("firstname"), rs.getString("lastname"), true, false, false);
                     } catch (SQLException ex) {
-                        Logger.getLogger(Manager.class.getName()).log(Level.SEVERE, null, ex);
+                        ex.printStackTrace();
                     }
                 }
             } catch (SQLException ex) {
-                Logger.getLogger(Manager.class.getName()).log(Level.SEVERE, null, ex);
+                ex.printStackTrace();
             }
         } else if (DBOperations.getAvailableRows("faculty", "username = '" + username + "' and password = '" + password + "'") == 1) {
             ResultSet rs = DBOperations.getTableResultSet("faculty", "username = '" + username + "' and password = '" + password + "'");
             try {
                 while (rs.next()) {
                     try {
-                        return new FacultyPojo(rs.getLong("id"), rs.getString("firstname"), rs.getString("lastname"));
+                        return new UserPojo(rs.getLong("id"), rs.getString("firstname"), rs.getString("lastname"), false, true, false);
                     } catch (SQLException ex) {
-                        Logger.getLogger(Manager.class.getName()).log(Level.SEVERE, null, ex);
+                        ex.printStackTrace();
                     }
                 }
             } catch (SQLException ex) {
-                Logger.getLogger(Manager.class.getName()).log(Level.SEVERE, null, ex);
+                ex.printStackTrace();
             }
         } else if (DBOperations.getAvailableRows("student", "username = '" + username + "' and password = '" + password + "'") == 1) {
             ResultSet rs = DBOperations.getTableResultSet("student", "username = '" + username + "' and password = '" + password + "'");
             try {
                 while (rs.next()) {
                     try {
-                        return new StudentPojo(rs.getLong("id"), rs.getString("firstname"), rs.getString("lastname"));
+                        return new UserPojo(rs.getLong("id"), rs.getString("firstname"), rs.getString("lastname"), false, false, true);
                     } catch (SQLException ex) {
-                        Logger.getLogger(Manager.class.getName()).log(Level.SEVERE, null, ex);
+                        ex.printStackTrace();
                     }
                 }
             } catch (SQLException ex) {
-                Logger.getLogger(Manager.class.getName()).log(Level.SEVERE, null, ex);
+                ex.printStackTrace();
             }
         }
         return null;

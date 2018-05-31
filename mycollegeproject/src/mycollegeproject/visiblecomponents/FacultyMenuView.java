@@ -1,14 +1,11 @@
 package mycollegeproject.visiblecomponents;
 
 import java.awt.Container;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
+import java.awt.event.*;
+import javax.swing.*;
 
 public class FacultyMenuView extends JFrame implements ActionListener {
-    
+
     Container container = getContentPane();
 
     JLabel pageTitleLabel = new JLabel("Faculty Home page");
@@ -17,7 +14,7 @@ public class FacultyMenuView extends JFrame implements ActionListener {
     JButton branchesViewButton = new JButton("Show Available Branches");
     JButton examsViewButton = new JButton("Show all Exams Details");
 
-    FacultyMenuView() {        
+    FacultyMenuView() {
         container.setLayout(null);
         this.setBounds(10, 10, 810, 510);
         pageTitleLabel.setBounds(20, 10, 500, 50);

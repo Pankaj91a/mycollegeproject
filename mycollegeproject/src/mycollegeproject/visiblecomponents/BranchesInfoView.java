@@ -1,22 +1,17 @@
 package mycollegeproject.visiblecomponents;
 
-import mycollegeproject.businesscomponents.BranchPojo;
+import mycollegeproject.businesscomponents.*;
 import java.awt.Container;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 import java.util.List;
-import javax.swing.DefaultListModel;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JList;
-import mycollegeproject.businesscomponents.Manager;
+import javax.swing.*;
 
 public class BranchesInfoView extends JFrame implements ActionListener {
 
     Container container = getContentPane();
     JLabel pageTitleLabel = null;
     DefaultListModel<String> list = new DefaultListModel<String>();
-    Manager manager = new Manager();
+    Implementor manager = new Implementor();
 
     BranchesInfoView(String title) {
         this.setBounds(10, 10, 810, 510);
